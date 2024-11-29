@@ -1,0 +1,149 @@
+#sliderText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 100;
+    width: 500px;
+    animation-name: movingText;
+    animation-duration: 1s;
+   
+}
+
+#mainLetter {
+    position: absolute;
+    top: 0%;
+    left: 10%;
+    width: 90%;
+    z-index: 100;
+    animation: showing 2s;
+    height: 90%;
+   
+}
+
+.active .slide1 {
+    /* background-image: url('../images/h1-rev-img-2.jpg'); */
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 0px;
+    height: 100vh;
+    display: block;
+    width: 100%;
+    background-position: center;
+    margin-top: 0px;
+    margin-bottom: 0px;
+
+    max-height: none;
+    animation: displaying 2.5s ;
+}
+
+.active .slide2 {
+    /* background-image: url('../images/h1-rev-img-3.jpg'); */
+    background-color: rgba(0, 0, 0, 0.8);
+
+    padding: 0px;
+    height: 100vh;
+    display: block;
+    width: 100%;
+    background-position: center;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    max-height: none;
+    overflow: visible;
+    opacity: 0;
+    animation: displaying 0.5s;
+}
+
+
+.active .left-slide, .active .right-slide {
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+
+.active .left-slide {
+    animation: moving 1s;
+}
+
+.right-slide, .left-slide {
+    /* display: none !important; */
+    opacity: 0;
+    height: 0;
+}
+.active  .right-slide,.active  .left-slide {
+    display: block !important;
+}
+
+
+.active .right-slide {
+    animation: moving1 1s;
+}
+.progress {
+    display: none;
+}
+.active .progress {
+    display: block;
+    background-color: gray;
+    height: 10px;
+    position: absolute;
+    bottom: 0;
+    animation:  progress 10s;
+}
+
+
+@keyframes moving1 {
+    0%{
+        right: 20%;
+    }
+    100% {
+        right: 0%;
+    }
+}
+
+
+
+@keyframes progress {
+    0%{
+        width: 20%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+@keyframes displaying {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes moving {
+    0%{
+        left: 20%;
+    }
+    100% {
+        left: 0%;
+    }
+}
+@keyframes showing {
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes movingText {
+    0%{
+        left: 100%;
+    }
+    100%{
+        left: 50%;
+    }
+}
